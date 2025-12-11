@@ -1,0 +1,60 @@
+[
+  {
+    "name": "tfgh",
+    "dishes": {
+      "Fish Fry": 1
+    }
+  },
+  {
+    "name": "kri",
+    "dishes": {
+      "Veg Rice": 4,
+      "Chicken Curry": 3,
+      "Fish Fry": 1
+    }
+  },
+  {
+    "name": "ki",
+    "dishes": {
+      "Chicken Curry": 1
+    }
+  },
+  {
+    "name": "demon",
+    "dishes": {
+      "Veg Rice": 1
+    }
+  },
+  {
+    "name": "demon",
+    "dishes": {
+      "Chicken Curry": 1
+    }
+  },
+  {
+    "name": "hello",
+    "dishes": {
+      "Chicken Curry": 1
+    }
+  },
+  {
+    "name": "hello",
+    "dishes": {
+      "Chicken Curry": 1
+    }
+  },
+  {
+    "name": "doraemon",
+    "dishes": {
+      "Veg Rice": {
+        "qty": 2
+      },
+      "Veg Soup": {
+        "qty": 1
+      },
+      "Chicken Curry": {
+        "qty": 1
+      }
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "gyjh",
+    "dishes": {
+      "Veg Soup": 1,
+      "Veg Salad": 1,
+      "Chicken Curry": 1
+    }
+  },
+  {
+    "name": "gyjh",
+    "dishes": {
+      "Veg Soup": 1,
+      "Veg Salad": 1,
+      "Chicken Curry": 1,
+      "Fish Fry": 1
+    }
+  },
+  {
+    "name": "rajini",
+    "dishes": {
+      "Chicken Curry": 3,
+      "Fish Fry": 4
+    }
+  },
+  {
+    "name": "f",
+    "dishes": {
+      "Veg Soup": 1
+    }
+  },
+  {
+    "name": "f",
+    "dishes": {
+      "Veg Soup": 1,
+      "Chicken Curry": 4
+    }
+  },
+  {
+    "name": "f",
+    "dishes": {
+      "Veg Soup": 1
+    }
+  },
+  {
+    "name": "f",
+    "dishes": {
+      "Veg Soup": 1,
+      "Chicken Curry": 1
+    }
+  },
+  {
+    "name": "f",
+    "dishes": {
+      "Chicken Curry": 1
+    }
+  }
+]
