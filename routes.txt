@@ -1,0 +1,88 @@
+MILA'S RESTAURANT ROUTES
+=========================
+
+Default server address: http://localhost:4567
+Application entry point: app.rb
+
+CUSTOMER / KIOSK
+-----------------
+GET  /                         Redirects to /kiosk.
+GET  /kiosk                   Renders the menu and kiosk cart interface.
+GET  /health                  Returns JSON health status and available product count.
+GET  /order                   Legacy redirect to /kiosk.
+GET  /menu                    Legacy redirect to /kiosk.
+GET  /summary                 Legacy redirect to /kiosk/checkout.
+GET  /finalize                Legacy redirect to /kiosk/checkout.
+
+POST /kiosk/cart               Adds, removes, increments, decrements, or clears a cart item.
+                                Requires product_id, action, and csrf_token.
+                                HTML form requests redirect; format=json returns cart JSON.
+POST /kiosk/customer           Saves an optional guest name in the kiosk session.
+                                Requires csrf_token.
+POST /kiosk/pay                Runs the simulated payment.
+                                Requires csrf_token, payment_token, method, and outcome.
+                                Outcome can be approved or declined.
+GET  /kiosk/checkout           Renders the customer/payment details and order summary.
+GET  /receipt/:id              Displays a receipt with the order QR code and status link.
+GET  /orders/:token            Public live order status page for a QR scan.
+GET  /orders/:token/qrcode.svg Returns the generated SVG QR code for an order.
+GET  /api/orders/:token/status  Returns JSON status data for live polling.
+
+ADMIN
+-----
+GET  /admin                    Redirects to /admin/orders.
+GET  /admin/orders             Displays all orders, checkouts, sales totals, and reset controls.
+                                 Requires an authenticated admin session.
+GET  /admin/orders.csv         Downloads all orders as CSV.
+                                 Requires an authenticated admin session.
+POST /admin/reset              Deletes order history and the JSON order ledger.
+                                 Requires csrf_token and an authenticated admin session.
+                                 Products and admin credentials are preserved.
+GET  /admin/login              Displays the admin login form.
+POST /admin/login              Authenticates the administrator.
+                                Requires username, password, and csrf_token.
+POST /admin/logout             Ends the administrator session.
+                                Requires csrf_token.
+GET  /admin/products           Displays menu management and inventory.
+                                Requires an authenticated admin session.
+POST /admin/products           Creates a product.
+                                Requires csrf_token, name, price, and category.
+                                Optional: description and available.
+GET  /admin/products/:id/edit  Displays the product edit form.
+                                Requires an authenticated admin session.
+POST /admin/products/:id       Updates an existing product.
+                                Requires csrf_token. Product data fields are optional
+                                except when changing the product; unavailable products
+                                remain available for editing.
+POST /admin/products/:id/remove Soft-removes a product from the customer menu.
+                                Requires csrf_token and an authenticated admin session.
+POST /admin/products/:id/restore Restores a soft-removed product.
+                                Requires csrf_token and an authenticated admin session.
+
+KITCHEN
+-------
+GET  /kitchen                 Displays the authenticated kitchen queue.
+GET  /menu/kitchen             Legacy redirect to /kitchen.
+POST /kitchen/:id/complete     Marks an active order ready and updates its JSON record.
+                                Requires csrf_token and authentication.
+POST /complete/:id             Legacy alias for /kitchen/:id/complete.
+                                Requires csrf_token and authentication.
+
+AUTHENTICATION FILTER
+---------------------
+BEFORE /admin/*                Redirects unauthenticated admin requests to /admin/login.
+                               POST requests are redirected with HTTP 303.
+
+STATIC ASSETS
+-------------
+GET  /home.jpeg                Kiosk background image.
+GET  /mila.jpeg                Restaurant logo.
+GET  /summary.jpeg             Summary image asset.
+
+NOTES
+-----
+All mutating browser forms use a CSRF token. Admin and kitchen pages require a
+session. Every order is mirrored to ORDER_RECORDS_FILE as JSON. Set PUBLIC_BASE_URL
+to a phone-reachable URL when generating QR codes; otherwise request.base_url is
+used. The payment flow is a simulator only; it does not accept or store card
+numbers, card passwords, bank credentials, or other real payment secrets.

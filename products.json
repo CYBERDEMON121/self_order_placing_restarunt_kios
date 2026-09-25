@@ -1,0 +1,42 @@
+[
+  {
+    "id": "veg-rice",
+    "name": "Veg Rice",
+    "price": 50,
+    "category": "Vegetables",
+    "description": "Fragrant rice with seasonal vegetables and herbs.",
+    "available": true
+  },
+  {
+    "id": "veg-soup",
+    "name": "Veg Soup",
+    "price": 30,
+    "category": "Starters",
+    "description": "Warm vegetable broth with a comforting finish.",
+    "available": true
+  },
+  {
+    "id": "veg-salad",
+    "name": "Veg Salad",
+    "price": 40,
+    "category": "Starters",
+    "description": "Crisp greens, cucumber, tomato, and house dressing.",
+    "available": true
+  },
+  {
+    "id": "chicken-curry",
+    "name": "Chicken Curry",
+    "price": 120,
+    "category": "Chicken",
+    "description": "Slow-cooked chicken in a rich aromatic gravy.",
+    "available": true
+  },
+  {
+    "id": "fish-fry",
+    "name": "Fish Fry",
+    "price": 150,
+    "category": "Seafood",
+    "description": "Crisp fried fish with lemon and herbs.",
+    "available": true
+  }
+]

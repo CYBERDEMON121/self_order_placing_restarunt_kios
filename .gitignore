@@ -1,0 +1,11 @@
+restaurant.sqlite3
+restaurant.sqlite3-shm
+restaurant.sqlite3-wal
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.json.lock
+order_records.json
+order_records.json.tmp-*
+.bundle/
+vendor/bundle/

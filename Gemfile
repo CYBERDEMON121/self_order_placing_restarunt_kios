@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+gem 'csv'
+gem 'sinatra', '~> 4.2'
+gem 'rackup', '~> 2.3'
+gem 'sqlite3', '~> 2.9'
+gem 'rqrcode', '~> 3.2'
+gem 'webrick', '~> 1.9'
